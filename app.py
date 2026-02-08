@@ -1,5 +1,6 @@
 import streamlit as st
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
+import pandas as pd
 
 # on initialise le moteur VADER
 analyzer = SentimentIntensityAnalyzer()
