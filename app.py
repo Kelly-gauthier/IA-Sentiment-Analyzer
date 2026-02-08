@@ -2,7 +2,7 @@ import streamlit as st
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 import pandas as pd
 
-# on initialise le moteur VADER
+# Initialize the VADER sentiment engine
 analyzer = SentimentIntensityAnalyzer()
 
 st.set_page_config(page_title="IA Sentiment Pro", page_icon="4")
