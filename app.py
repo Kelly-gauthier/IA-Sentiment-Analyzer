@@ -16,7 +16,7 @@ message = st.text_area("Text to analyze (English):")
 
 if st.button("Run Analysis"):
     if message:
-        #VADER donne un dictionnaire de scores (pos, neg, neu, compound)
+        # VADER returns a dictionary of scores (pos, neg, neu, compound)
         vs = analyzer.polarity_scores(message)
         score = vs["compound"] # le score global entre -1 et 1
 
