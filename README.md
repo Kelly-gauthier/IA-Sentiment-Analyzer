@@ -5,7 +5,7 @@ Welcome to my first Artificial Intelligence project! This application analyzes t
 What I learned and implemented:
 - **Advanced Analysis**: Using vaderSentiment to detect nuances and negations
 - **Visualization**: Creating dynamic graphs with Pandas and Streamlit.
-- **Pro Development**: Setting up a virtual environment (`.venv`) and version control with Git/PyCharm.
+- **Pro Development**: Setting up a virtual environment (.venv) and version control with Git/PyCharm.
 
 ## Local Installation
 To test my application on your machine:
