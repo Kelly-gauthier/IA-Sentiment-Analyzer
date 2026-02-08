@@ -6,8 +6,8 @@ analyzer = SentimentIntensityAnalyzer()
 
 st.set_page_config(page_title="IA Sentiment Pro", page_icon="4")
 
-st.title("Analyseur de sentiments Avance")
-st.write("Ce modele comprend mieux les negations comme 'dont feel good'.")
+st.title("Advanced Sentiment Analyzer")
+st.write("This model accurately interprets nuances and negations (e.g., 'don't feel good').")
 
 message = st.text_area("Text a analyser (Anglais):")
 
