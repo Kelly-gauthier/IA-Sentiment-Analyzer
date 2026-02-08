@@ -11,7 +11,8 @@ st.set_page_config(page_title="AI Sentiment Pro", page_icon="🧠")
 st.title("Advanced Sentiment Analyzer")
 st.write("This model accurately interprets nuances and negations (e.g., 'don't feel good').")
 
-message = st.text_area("Text a analyser (Anglais):")
+# Single text analysis section
+message = st.text_area("Text to analyze (English):")
 
 if st.button("Lancer l'analyse"):
     if message:
