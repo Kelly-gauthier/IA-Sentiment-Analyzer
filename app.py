@@ -22,48 +22,47 @@ if st.button("Run Analysis"):
 
         # Display logic based on score
         if score >= 0.05:
-            st.success(f"Positif (score: {score:.2f})")
+            st.success(f"Positive (score: {score:.2f})")
         elif score <= -0.05:
-            st.error(f"negatif (score: {score:.2f})")
+            st.error(f"Negative (score: {score:.2f})")
         else:
-            st.warning(f"Neutre (score: {score:.2f})")
+            st.warning(f"Neutral (score: {score:.2f})")
 
-            #Details techniques pour faire pro
-            with st.expander("Voir les details de L'IA"):
-                st.write(f"Negativite: {vs['neg']}")
-                st.write(f"Neutralite: {vs['neu']}")
-                st.write(f"Positivite: {vs['pos']}")
+        # Technical details for a professional look
+        with st.expander("View AI Technical Details"):
+            st.write(f"Negativity: {vs['neg']}")
+            st.write(f"Neutrality: {vs['neu']}")
+            st.write(f"Positivity: {vs['pos']}")
     else:
-        st.info("ecris un phrase !")
+        st.info("Please enter a sentence!")
 
-import pandas as pd # Pour gerer les donnees sous forme de tableau
-
-# ... (garde ton code precedent au dessus)
+# Group analysis section
 st.divider()
-st.subheader("📊 Analyse de groupe personnalisée")
+st.subheader("📊 Custom Group Analysis")
 
-# Zone pour saisir plusieurs phrases séparées par une virgule ou un retour à la ligne
+# Text area for multiple phrases separated by commas or new lines
 input_groupe = st.text_area(
-    "Entrez plusieurs phrases à comparer (séparez-les par une virgule ou une ligne) :",
+    "Enter multiple phrases to compare (separate by comma or new line):",
     placeholder="Ex: I love it, I hate it, Not bad..."
 )
 
-if st.button("Lancer l'analyse groupée"):
+if st.button("Run Group Analysis"):
     if input_groupe:
-        # On sépare le texte pour créer une liste propre
-        # On gère les virgules et les sauts de ligne
-        lignes = input_groupe.replace('\n', ',').split(',')
-        phrases_utilisateurs = [p.strip() for p in lignes if p.strip()]
+        # Clean the input to create a proper list
+        # Handle both new lines and commas
+        lines = input_groupe.replace('\n', ',').split(',')
+        user_phrases = [p.strip() for p in lines if p.strip()]
 
-        resultats = []
-        for p in phrases_utilisateurs:
+        results = []
+        for p in user_phrases:
             score = analyzer.polarity_scores(p)['compound']
-            resultats.append({"Texte": p, "Score": score})
+            results.append({"Text": p, "Score": score})
 
-        df = pd.DataFrame(resultats)
+        # Convert results to a DataFrame
+        df = pd.DataFrame(results)
 
-        # Affichage visuel
-        st.bar_chart(df.set_index("Texte"))
+        # Visual representation
+        st.bar_chart(df.set_index("Text"))
         st.table(df)
     else:
-        st.warning("Ajoutez au moins une phrase pour la simulation.")
+        st.warning("Please add at least one phrase for the simulation.")
