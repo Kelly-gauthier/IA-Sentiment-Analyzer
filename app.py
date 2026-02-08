@@ -20,7 +20,7 @@ if st.button("Run Analysis"):
         vs = analyzer.polarity_scores(message)
         score = vs["compound"]  # Global score between -1 and 1
 
-        #logique d'affichage
+        # Display logic based on score
         if score >= 0.05:
             st.success(f"Positif (score: {score:.2f})")
         elif score <= -0.05:
