@@ -14,7 +14,7 @@ st.write("This model accurately interprets nuances and negations (e.g., 'don't f
 # Single text analysis section
 message = st.text_area("Text to analyze (English):")
 
-if st.button("Lancer l'analyse"):
+if st.button("Run Analysis"):
     if message:
         #VADER donne un dictionnaire de scores (pos, neg, neu, compound)
         vs = analyzer.polarity_scores(message)
