@@ -18,7 +18,7 @@ if st.button("Run Analysis"):
     if message:
         # VADER returns a dictionary of scores (pos, neg, neu, compound)
         vs = analyzer.polarity_scores(message)
-        score = vs["compound"] # le score global entre -1 et 1
+        score = vs["compound"]  # Global score between -1 and 1
 
         #logique d'affichage
         if score >= 0.05:
