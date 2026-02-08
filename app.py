@@ -5,7 +5,8 @@ import pandas as pd
 # Initialize the VADER sentiment engine
 analyzer = SentimentIntensityAnalyzer()
 
-st.set_page_config(page_title="IA Sentiment Pro", page_icon="4")
+# Page configuration
+st.set_page_config(page_title="AI Sentiment Pro", page_icon="🧠")
 
 st.title("Advanced Sentiment Analyzer")
 st.write("This model accurately interprets nuances and negations (e.g., 'don't feel good').")
